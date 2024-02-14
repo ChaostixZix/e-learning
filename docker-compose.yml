@@ -1,19 +1,32 @@
-version: '3'
+version: '3.8'
 services:
-  web:
+  app:
     build: .
+    container_name: codeigniter_app
+    restart: always
     ports:
       - "80:80"
     volumes:
       - .:/var/www/html
     depends_on:
       - db
+    environment:
+      CI_ENV: development # Set your CodeIgniter environment variable
+
   db:
     image: mysql:5.7
+    container_name: codeigniter_db
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: elmss
-      MYSQL_USER: elmss
-      MYSQL_PASSWORD: elmss123
+      MYSQL_DATABASE: 'elmss'
+      MYSQL_USER: 'elmss'
+      MYSQL_PASSWORD: 'elmss123'
+      MYSQL_ROOT_PASSWORD: 'elmss123'
     ports:
       - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+     driver: local

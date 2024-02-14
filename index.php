@@ -1,7 +1,7 @@
 <?php
 $envs = ['development', 'testing', 'production'];
 define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : $envs[2]);
-
+// define('ENVIRONMENT', 'development');
 switch (ENVIRONMENT) {
     case 'development':
         error_reporting(-1);
@@ -114,6 +114,7 @@ define('VIEWPATH', $view_folder . DIRECTORY_SEPARATOR);
 
 include 'application/config/database.php';
 $database = $db['default']['database'];
+
 if ($database == '') {
     header("Location: installer");
 } else {

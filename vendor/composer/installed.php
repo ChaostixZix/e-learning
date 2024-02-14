@@ -1,449 +1,374 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'codeigniter/framework',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '75a1511e109c6b6837155ff3ac35d689c7336aa6',
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => '09dc975277e685cfc72999edac80d5eed3210e0b',
-    'name' => 'codeigniter/framework',
-  ),
-  'versions' => 
-  array (
-    'alhimik1986/php-excel-templator' => 
-    array (
-      'pretty_version' => 'v1.0.11',
-      'version' => '1.0.11.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ef813f49158003a9f6711f68df7379fa1f2ce223',
+    'versions' => array(
+        'alhimik1986/php-excel-templator' => array(
+            'pretty_version' => 'v1.0.15',
+            'version' => '1.0.15.0',
+            'reference' => 'db87e888e134544765d0e32d68ec5bad64587588',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../alhimik1986/php-excel-templator',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'codeigniter/framework' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '75a1511e109c6b6837155ff3ac35d689c7336aa6',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'doctrine/instantiator' => array(
+            'pretty_version' => '1.5.0',
+            'version' => '1.5.0.0',
+            'reference' => '0a0fa9780f5d4e507415a065172d26a98d02047b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/instantiator',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'dompdf/dompdf' => array(
+            'pretty_version' => 'v1.2.2',
+            'version' => '1.2.2.0',
+            'reference' => '5031045d9640b38cfc14aac9667470df09c9e090',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../dompdf/dompdf',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'ezyang/htmlpurifier' => array(
+            'pretty_version' => 'v4.17.0',
+            'version' => '4.17.0.0',
+            'reference' => 'bbc513d79acf6691fa9cf10f192c90dd2957f18c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ezyang/htmlpurifier',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'laminas/laminas-escaper' => array(
+            'pretty_version' => '2.13.0',
+            'version' => '2.13.0.0',
+            'reference' => 'af459883f4018d0f8a0c69c7a209daef3bf973ba',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-escaper',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'maennchen/zipstream-php' => array(
+            'pretty_version' => '3.1.0',
+            'version' => '3.1.0.0',
+            'reference' => 'b8174494eda667f7d13876b4a7bfef0f62a7c0d1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../maennchen/zipstream-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'markbaker/complex' => array(
+            'pretty_version' => '3.0.2',
+            'version' => '3.0.2.0',
+            'reference' => '95c56caa1cf5c766ad6d65b6344b807c1e8405b9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../markbaker/complex',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'markbaker/matrix' => array(
+            'pretty_version' => '3.0.1',
+            'version' => '3.0.1.0',
+            'reference' => '728434227fe21be27ff6d86621a1b13107a2562c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../markbaker/matrix',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'mikey179/vfsstream' => array(
+            'pretty_version' => 'v1.1.0',
+            'version' => '1.1.0.0',
+            'reference' => 'fc0fe8f4d0b527254a2dc45f0c265567c881d07e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mikey179/vfsstream',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'myclabs/deep-copy' => array(
+            'pretty_version' => '1.11.1',
+            'version' => '1.11.1.0',
+            'reference' => '7284c22080590fb39f2ffa3e9057f10a4ddd0e0c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../myclabs/deep-copy',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'phenx/php-font-lib' => array(
+            'pretty_version' => '0.5.6',
+            'version' => '0.5.6.0',
+            'reference' => 'a1681e9793040740a405ac5b189275059e2a9863',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phenx/php-font-lib',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phenx/php-svg-lib' => array(
+            'pretty_version' => '0.4.1',
+            'version' => '0.4.1.0',
+            'reference' => '4498b5df7b08e8469f0f8279651ea5de9626ed02',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phenx/php-svg-lib',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpdocumentor/reflection-docblock' => array(
+            'pretty_version' => '2.0.5',
+            'version' => '2.0.5.0',
+            'reference' => 'e6a969a640b00d8daa3c66518b0405fb41ae0c4b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpdocumentor/reflection-docblock',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'phpoffice/phpspreadsheet' => array(
+            'pretty_version' => '1.29.0',
+            'version' => '1.29.0.0',
+            'reference' => 'fde2ccf55eaef7e86021ff1acce26479160a0fa0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpoffice/phpspreadsheet',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpoffice/phpword' => array(
+            'pretty_version' => '0.18.3',
+            'version' => '0.18.3.0',
+            'reference' => 'be0190cd5d8f95b4be08d5853b107aa4e352759a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpoffice/phpword',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpspec/prophecy' => array(
+            'pretty_version' => 'v1.5.0',
+            'version' => '1.5.0.0',
+            'reference' => '4745ded9307786b730d7a60df5cb5a6c43cf95f7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpspec/prophecy',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'phpunit/php-code-coverage' => array(
+            'pretty_version' => '3.2.0',
+            'version' => '3.2.0.0',
+            'reference' => '85f5db2d0a0da79ad6a256eb54148ba383059ad9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpunit/php-code-coverage',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'phpunit/php-file-iterator' => array(
+            'pretty_version' => '1.4.5',
+            'version' => '1.4.5.0',
+            'reference' => '730b01bc3e867237eaac355e06a36b85dd93a8b4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpunit/php-file-iterator',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'phpunit/php-text-template' => array(
+            'pretty_version' => '1.2.1',
+            'version' => '1.2.1.0',
+            'reference' => '31f8b717e51d9a2afca6c9f046f5d69fc27c8686',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpunit/php-text-template',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'phpunit/php-timer' => array(
+            'pretty_version' => '7.0.0',
+            'version' => '7.0.0.0',
+            'reference' => '8a59d9e25720482ee7fcdf296595e08795b84dc5',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpunit/php-timer',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'phpunit/php-token-stream' => array(
+            'pretty_version' => '1.4.12',
+            'version' => '1.4.12.0',
+            'reference' => '1ce90ba27c42e4e44e6d8458241466380b51fa16',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpunit/php-token-stream',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'phpunit/phpunit' => array(
+            'pretty_version' => '5.2.7',
+            'version' => '5.2.7.0',
+            'reference' => '073701643835376cb2f15dc005ea8933f8d4edbd',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpunit/phpunit',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'phpunit/phpunit-mock-objects' => array(
+            'pretty_version' => '3.1.3',
+            'version' => '3.1.3.0',
+            'reference' => '151c96874bff6fe61a25039df60e776613a61489',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpunit/phpunit-mock-objects',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'psr/http-client' => array(
+            'pretty_version' => '1.0.3',
+            'version' => '1.0.3.0',
+            'reference' => 'bb5906edc1c324c9a05aa0873d40117941e5fa90',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-client',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-factory' => array(
+            'pretty_version' => '1.0.2',
+            'version' => '1.0.2.0',
+            'reference' => 'e616d01114759c4c489f93b099585439f795fe35',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-factory',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-message' => array(
+            'pretty_version' => '2.0',
+            'version' => '2.0.0.0',
+            'reference' => '402d35bcb92c70c026d1a6a9883f06b2ead23d71',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-message',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/simple-cache' => array(
+            'pretty_version' => '3.0.0',
+            'version' => '3.0.0.0',
+            'reference' => '764e0b3939f5ca87cb904f570ef9be2d78a07865',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/simple-cache',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'sabberworm/php-css-parser' => array(
+            'pretty_version' => '8.5.0',
+            'version' => '8.5.0.0',
+            'reference' => '4e9a54c2a368fcd73ecc6b45f98c7714b54a7db0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sabberworm/php-css-parser',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'sebastian/code-unit-reverse-lookup' => array(
+            'pretty_version' => '1.0.2',
+            'version' => '1.0.2.0',
+            'reference' => '1de8cd5c010cb153fcd68b8d0f64606f523f7619',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sebastian/code-unit-reverse-lookup',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'sebastian/comparator' => array(
+            'pretty_version' => '1.2.4',
+            'version' => '1.2.4.0',
+            'reference' => '2b7424b55f5047b47ac6e5ccb20b2aea4011d9be',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sebastian/comparator',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'sebastian/diff' => array(
+            'pretty_version' => '1.4.1',
+            'version' => '1.4.1.0',
+            'reference' => '13edfd8706462032c2f52b4b862974dd46b71c9e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sebastian/diff',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'sebastian/environment' => array(
+            'pretty_version' => '1.3.7',
+            'version' => '1.3.7.0',
+            'reference' => '4e8f0da10ac5802913afc151413bc8c53b6c2716',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sebastian/environment',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'sebastian/exporter' => array(
+            'pretty_version' => '1.2.2',
+            'version' => '1.2.2.0',
+            'reference' => '42c4c2eec485ee3e159ec9884f95b431287edde4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sebastian/exporter',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'sebastian/global-state' => array(
+            'pretty_version' => '1.1.1',
+            'version' => '1.1.1.0',
+            'reference' => 'bc37d50fea7d017d3d340f230811c9f1d7280af4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sebastian/global-state',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'sebastian/recursion-context' => array(
+            'pretty_version' => '1.0.5',
+            'version' => '1.0.5.0',
+            'reference' => 'b19cc3298482a335a95f3016d2f8a6950f0fbcd7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sebastian/recursion-context',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'sebastian/resource-operations' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'reference' => 'ce990bb21759f94aeafd30209e8cfcdfa8bc3f52',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sebastian/resource-operations',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'sebastian/version' => array(
+            'pretty_version' => '2.0.1',
+            'version' => '2.0.1.0',
+            'reference' => '99732be0ddb3361e16ad77b68ba41efc8e979019',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sebastian/version',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'symfony/polyfill-ctype' => array(
+            'pretty_version' => 'v1.29.0',
+            'version' => '1.29.0.0',
+            'reference' => 'ef4d7e442ca910c4764bce785146269b30cb5fc4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-ctype',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'symfony/yaml' => array(
+            'pretty_version' => 'v3.4.47',
+            'version' => '3.4.47.0',
+            'reference' => '88289caa3c166321883f67fe5130188ebbb47094',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/yaml',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
     ),
-    'codeigniter/framework' => 
-    array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '09dc975277e685cfc72999edac80d5eed3210e0b',
-    ),
-    'doctrine/instantiator' => 
-    array (
-      'pretty_version' => '1.4.0',
-      'version' => '1.4.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'd56bf6102915de5702778fe20f2de3b2fe570b5b',
-    ),
-    'dompdf/dompdf' => 
-    array (
-      'pretty_version' => 'v1.0.2',
-      'version' => '1.0.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '8768448244967a46d6e67b891d30878e0e15d25c',
-    ),
-    'ezyang/htmlpurifier' => 
-    array (
-      'pretty_version' => 'v4.13.0',
-      'version' => '4.13.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '08e27c97e4c6ed02f37c5b2b20488046c8d90d75',
-    ),
-    'laminas/laminas-escaper' => 
-    array (
-      'pretty_version' => '2.8.0',
-      'version' => '2.8.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2d6dce99668b413610e9544183fa10392437f542',
-    ),
-    'laminas/laminas-zendframework-bridge' => 
-    array (
-      'pretty_version' => '1.3.0',
-      'version' => '1.3.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '13af2502d9bb6f7d33be2de4b51fb68c6cdb476e',
-    ),
-    'maennchen/zipstream-php' => 
-    array (
-      'pretty_version' => '2.1.0',
-      'version' => '2.1.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'c4c5803cc1f93df3d2448478ef79394a5981cc58',
-    ),
-    'markbaker/complex' => 
-    array (
-      'pretty_version' => '2.0.3',
-      'version' => '2.0.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '6f724d7e04606fd8adaa4e3bb381c3e9db09c946',
-    ),
-    'markbaker/matrix' => 
-    array (
-      'pretty_version' => '2.1.3',
-      'version' => '2.1.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '174395a901b5ba0925f1d790fa91bab531074b61',
-    ),
-    'mikey179/vfsstream' => 
-    array (
-      'pretty_version' => 'v1.1.0',
-      'version' => '1.1.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'fc0fe8f4d0b527254a2dc45f0c265567c881d07e',
-    ),
-    'myclabs/deep-copy' => 
-    array (
-      'pretty_version' => '1.10.2',
-      'version' => '1.10.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '776f831124e9c62e1a2c601ecc52e776d8bb7220',
-      'replaced' => 
-      array (
-        0 => '1.10.2',
-      ),
-    ),
-    'myclabs/php-enum' => 
-    array (
-      'pretty_version' => '1.8.3',
-      'version' => '1.8.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'b942d263c641ddb5190929ff840c68f78713e937',
-    ),
-    'phenx/php-font-lib' => 
-    array (
-      'pretty_version' => '0.5.2',
-      'version' => '0.5.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ca6ad461f032145fff5971b5985e5af9e7fa88d8',
-    ),
-    'phenx/php-svg-lib' => 
-    array (
-      'pretty_version' => 'v0.3.3',
-      'version' => '0.3.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '5fa61b65e612ce1ae15f69b3d223cb14ecc60e32',
-    ),
-    'phpdocumentor/reflection-common' => 
-    array (
-      'pretty_version' => '2.2.0',
-      'version' => '2.2.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '1d01c49d4ed62f25aa84a747ad35d5a16924662b',
-    ),
-    'phpdocumentor/reflection-docblock' => 
-    array (
-      'pretty_version' => '5.2.2',
-      'version' => '5.2.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '069a785b2141f5bcf49f3e353548dc1cce6df556',
-    ),
-    'phpdocumentor/type-resolver' => 
-    array (
-      'pretty_version' => '1.4.0',
-      'version' => '1.4.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0',
-    ),
-    'phpoffice/phpspreadsheet' => 
-    array (
-      'pretty_version' => '1.18.0',
-      'version' => '1.18.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '418cd304e8e6b417ea79c3b29126a25dc4b1170c',
-    ),
-    'phpoffice/phpword' => 
-    array (
-      'pretty_version' => '0.18.2',
-      'version' => '0.18.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'aca10785cf68dc95d7f6fac4fe854979fef3f8db',
-    ),
-    'phpspec/prophecy' => 
-    array (
-      'pretty_version' => 'v1.10.3',
-      'version' => '1.10.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '451c3cd1418cf640de218914901e51b064abb093',
-    ),
-    'phpunit/php-code-coverage' => 
-    array (
-      'pretty_version' => '4.0.8',
-      'version' => '4.0.8.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ef7b2f56815df854e66ceaee8ebe9393ae36a40d',
-    ),
-    'phpunit/php-file-iterator' => 
-    array (
-      'pretty_version' => '1.4.5',
-      'version' => '1.4.5.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '730b01bc3e867237eaac355e06a36b85dd93a8b4',
-    ),
-    'phpunit/php-text-template' => 
-    array (
-      'pretty_version' => '1.2.1',
-      'version' => '1.2.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '31f8b717e51d9a2afca6c9f046f5d69fc27c8686',
-    ),
-    'phpunit/php-timer' => 
-    array (
-      'pretty_version' => '1.0.9',
-      'version' => '1.0.9.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '3dcf38ca72b158baf0bc245e9184d3fdffa9c46f',
-    ),
-    'phpunit/php-token-stream' => 
-    array (
-      'pretty_version' => '2.0.2',
-      'version' => '2.0.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '791198a2c6254db10131eecfe8c06670700904db',
-    ),
-    'phpunit/phpunit' => 
-    array (
-      'pretty_version' => '5.7.27',
-      'version' => '5.7.27.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'b7803aeca3ccb99ad0a506fa80b64cd6a56bbc0c',
-    ),
-    'phpunit/phpunit-mock-objects' => 
-    array (
-      'pretty_version' => '3.4.4',
-      'version' => '3.4.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'a23b761686d50a560cc56233b9ecf49597cc9118',
-    ),
-    'psr/http-client' => 
-    array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
-    ),
-    'psr/http-factory' => 
-    array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '12ac7fcd07e5b077433f5f2bee95b3a771bf61be',
-    ),
-    'psr/http-message' => 
-    array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'f6561bf28d520154e4b0ec72be95418abe6d9363',
-    ),
-    'psr/simple-cache' => 
-    array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
-    ),
-    'sabberworm/php-css-parser' => 
-    array (
-      'pretty_version' => '8.3.1',
-      'version' => '8.3.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'd217848e1396ef962fb1997cf3e2421acba7f796',
-    ),
-    'sebastian/code-unit-reverse-lookup' => 
-    array (
-      'pretty_version' => '1.0.2',
-      'version' => '1.0.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '1de8cd5c010cb153fcd68b8d0f64606f523f7619',
-    ),
-    'sebastian/comparator' => 
-    array (
-      'pretty_version' => '1.2.4',
-      'version' => '1.2.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2b7424b55f5047b47ac6e5ccb20b2aea4011d9be',
-    ),
-    'sebastian/diff' => 
-    array (
-      'pretty_version' => '1.4.3',
-      'version' => '1.4.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '7f066a26a962dbe58ddea9f72a4e82874a3975a4',
-    ),
-    'sebastian/environment' => 
-    array (
-      'pretty_version' => '2.0.0',
-      'version' => '2.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '5795ffe5dc5b02460c3e34222fee8cbe245d8fac',
-    ),
-    'sebastian/exporter' => 
-    array (
-      'pretty_version' => '2.0.0',
-      'version' => '2.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ce474bdd1a34744d7ac5d6aad3a46d48d9bac4c4',
-    ),
-    'sebastian/global-state' => 
-    array (
-      'pretty_version' => '1.1.1',
-      'version' => '1.1.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'bc37d50fea7d017d3d340f230811c9f1d7280af4',
-    ),
-    'sebastian/object-enumerator' => 
-    array (
-      'pretty_version' => '2.0.1',
-      'version' => '2.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '1311872ac850040a79c3c058bea3e22d0f09cbb7',
-    ),
-    'sebastian/recursion-context' => 
-    array (
-      'pretty_version' => '2.0.0',
-      'version' => '2.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2c3ba150cbec723aa057506e73a8d33bdb286c9a',
-    ),
-    'sebastian/resource-operations' => 
-    array (
-      'pretty_version' => '1.0.0',
-      'version' => '1.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ce990bb21759f94aeafd30209e8cfcdfa8bc3f52',
-    ),
-    'sebastian/version' => 
-    array (
-      'pretty_version' => '2.0.1',
-      'version' => '2.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '99732be0ddb3361e16ad77b68ba41efc8e979019',
-    ),
-    'symfony/polyfill-ctype' => 
-    array (
-      'pretty_version' => 'v1.23.0',
-      'version' => '1.23.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '46cd95797e9df938fdd2b03693b5fca5e64b01ce',
-    ),
-    'symfony/polyfill-mbstring' => 
-    array (
-      'pretty_version' => 'v1.23.1',
-      'version' => '1.23.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '9174a3d80210dca8daa7f31fec659150bbeabfc6',
-    ),
-    'symfony/yaml' => 
-    array (
-      'pretty_version' => 'v4.4.29',
-      'version' => '4.4.29.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '3abcc4db06d4e776825eaa3ed8ad924d5bc7432a',
-    ),
-    'webmozart/assert' => 
-    array (
-      'pretty_version' => '1.10.0',
-      'version' => '1.10.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '6964c76c7804814a842473e0c8fd15bab0f18e25',
-    ),
-    'zendframework/zend-escaper' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '^2.6.1',
-      ),
-    ),
-  ),
 );
