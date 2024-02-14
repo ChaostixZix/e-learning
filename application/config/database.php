@@ -1,12 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-    'dsn'	=> '',
-    'hostname' => 'srv476346',
+    'dsn'    => '',
+    'hostname' => 'db', // Change this line
     'username' => 'elmss',
     'password' => 'elmss123',
     'database' => 'elmss',
