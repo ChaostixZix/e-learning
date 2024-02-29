@@ -1,4 +1,4 @@
-<script src='https://bintangputra.my.id:8443/external_api.js' async></script>
+<script src='https://bintangputra.my.id/external_api.js' async></script>
 
 <div class="content-wrapper bg-white ">
     <div class="mx-4">
@@ -47,7 +47,7 @@
 </style>
 <script type="text/javascript">
     window.onload = () => {
-        const api = new JitsiMeetExternalAPI("bintangputra.my.id:8443", {
+        const api = new JitsiMeetExternalAPI("bintangputra.my.id", {
             roomName: "<?php echo $kelas ? $kelas : 'test' ?>",
             parentNode: document.querySelector('#jaas-container'),
             userInfo: {
