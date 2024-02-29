@@ -100,7 +100,9 @@ class Dashboard extends CI_Controller
         foreach ($kbms as $key => $item) {
             $arrKbm[$item->id_kelas] = $item;
         }
+
         if ($this->ion_auth->in_group("siswa")) {
+
             $siswa = $this->dashboard->getDataSiswa($user->username, $tp->id_tp, $smt->id_smt);
             if ($siswa == null) {
                 $this->load->view("disable_login", $data);
@@ -117,6 +119,7 @@ class Dashboard extends CI_Controller
             vVtRN:
             goto Ppxw0;
         }
+
         $token = $this->cbt->getToken();
         $tkn["token"] = '';
         $tkn["auto"] = "0";
@@ -143,11 +146,14 @@ class Dashboard extends CI_Controller
                 }
             }
         }
+
         $data["jadwals_ujian"] = $tglJadwals;
         $data["pengawas"] = $this->cbt->getAllPengawas($tp->id_tp, $smt->id_smt, null, null);
         $data["ruangs"] = $this->cbt->getDistinctRuang($tp->id_tp, $smt->id_smt, []);
         $data["gurus"] = $this->dropdown->getAllGuru();
+
         if ($this->ion_auth->is_admin()) {
+
             $data["info_box"] = $this->admin_box($setting, $tp->id_tp, $smt->id_smt);
             $data["ujian_box"] = $this->ujian_box();
             $data["profile"] = $this->dashboard->getProfileAdmin($user->id);
@@ -156,7 +162,9 @@ class Dashboard extends CI_Controller
             $this->load->view("_templates/dashboard/_footer");
             goto db7nA;
         }
+
         if ($this->ion_auth->in_group("guru")) {
+            // print_r([$user->id, $tp->id_tp, $smt->id_smt]);
             $guru = $this->dashboard->getDataGuruByUserId($user->id, $tp->id_tp, $smt->id_smt);
             if ($guru == null) {
                 $this->load->view("disable_login", $data);

@@ -62,10 +62,15 @@ class Kelasmaterijadwal extends CI_Controller
             goto WiiX0;
         }
         if ($this->ion_auth->in_group("guru")) {
-            $guru = $this->dashboard->getDataGuruByUserId($user->id, $tp->id_tp, $smt->id_smt);
+
+            $guru = $this->dashboard->getDataGuruByUserId($user->id, $tp->id_tp, $smt->id_smtp);
+
             $data["guru"] = $guru;
+
             $this->load->view("members/guru/templates/header", $data);
+
             $this->load->view("kelas/materijadwal/data");
+
             $this->load->view("members/guru/templates/footer");
             goto she0U;
         }

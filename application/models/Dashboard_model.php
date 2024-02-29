@@ -127,6 +127,7 @@ class Dashboard_model extends CI_Model
     }
     public function getDataGuruByUserId($id_user, $id_tp, $id_smt)
     {
+
         $this->db->query("SET SQL_BIG_SELECTS=1");
         $this->db->select("a.id_guru, a.nama_guru, a.nip, a.id_user, a.foto, b.id_jabatan, b.id_kelas as wali_kelas, f.level_id, g.level");
         $this->db->from("master_guru a");
@@ -134,8 +135,17 @@ class Dashboard_model extends CI_Model
         $this->db->join("level_guru e", "b.id_jabatan=e.id_level", "left");
         $this->db->join("master_kelas f", "a.id_guru=f.guru_id AND f.id_tp=" . $id_tp . " AND f.id_smt=" . $id_smt, "left");
         $this->db->join("level_kelas g", "f.level_id=g.id_level", "left");
+
         $this->db->where("a.id_user", $id_user);
-        $query = $this->db->get()->row();
+
+        try {
+            $query = $this->db->get()->row();
+        } catch (Exception $e) {
+            // Handle the exception here if needed
+            echo "Error: " . $e->getMessage(); // Print the error message
+            $query = null; // Set query to null in case of an exception
+        }
+
         return $query;
     }
     public function getDataGuruById($id_guru, $id_tp, $id_smt)

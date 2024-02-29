@@ -100,7 +100,10 @@ if (isset($jadwal_kbm)) {
                                                             foreach ($arrRes[$jamke] as $value) : ?>
                                                                 <td class="align-middle text-center">
                                                                     <div class="value-name" data-idmapel="<?= $value['id_mapel'] ?>" data-idhari="<?= $value['id_hari'] ?>" id="<?= $value['id_hari'] . $jamke ?>">
-                                                                        <?= $value['kode'] ?>
+
+                                                                        <a href="/video/index/<?= $value['kode'] ?>">
+                                                                            <?= $value['kode'] ?>
+                                                                        </a>
                                                                     </div>
                                                                 </td>
                                                             <?php

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by IntelliJ IDEA.
  * User: multazam
@@ -108,13 +109,11 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                         <br>
                         <?php
                         if (count($kelas) > 0) :
-                            foreach ($kelas as $key => $value) :?>
-                                <a href="<?= base_url('kelasmaterijadwal/kelas?kelas=' . $key . '&date=' . $date_selected . '&tahun=' . $tp_active->tahun . '&bulan=' . date('m', strtotime($date_selected))) ?>"
-                                   class="mt-1 btn <?= $id_kelas == $key ? 'btn-success' : 'btn-outline-success' ?>"
-                                   id="btn-<?= $key ?>"><?= $value ?>
+                            foreach ($kelas as $key => $value) : ?>
+                                <a href="<?= base_url('kelasmaterijadwal/kelas?kelas=' . $key . '&date=' . $date_selected . '&tahun=' . $tp_active->tahun . '&bulan=' . date('m', strtotime($date_selected))) ?>" class="mt-1 btn <?= $id_kelas == $key ? 'btn-success' : 'btn-outline-success' ?>" id="btn-<?= $key ?>"><?= $value ?>
                                 </a>
                             <?php endforeach;
-                        else: ?>
+                        else : ?>
                             <div class="col-12 p-0">
                                 <div class="alert alert-default-warning shadow align-content-center" role="alert">
                                     Belum ada data kelas untuk Tahun Pelajaran <b><?= $tp_active->tahun ?></b> Semester:
@@ -171,17 +170,17 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                                 </div>
                             </div>
 
-                        <?php else: ?>
+                        <?php else : ?>
                             <div class="row">
                                 <div class="col-md-3 col-4">
                                     <select class="form-control" name="year" id="year">
                                         <?php foreach ($tp as $thn) :
                                             if ($thn->tahun == $thn_selected) :
                                                 //$selected = $thn->tahun == $thn_selected ? 'selected="selected"' : "";
-                                                ?>
-                                                <option value="<?= $thn->tahun ?>"
-                                                        selected="selected"><?= $thn->tahun ?></option>
-                                            <?php endif; endforeach; ?>
+                                        ?>
+                                                <option value="<?= $thn->tahun ?>" selected="selected"><?= $thn->tahun ?></option>
+                                        <?php endif;
+                                        endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-4">
@@ -200,19 +199,18 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                                             foreach ($arrSmt2 as $key => $dua) :
                                                 $mSelect = date('m', strtotime($date_selected)) == $key ? 'selected="selected"' : ""; ?>
                                                 <option value="<?= $key ?>" <?= $mSelect ?>><?= $dua ?></option>
-                                            <?php endforeach; endif; ?>
+                                        <?php endforeach;
+                                        endif; ?>
                                     </select>
                                 </div>
-                                <button class="col-2 col-md-1 btn btn-outline-primary" id="prevweek"
-                                        onclick="prevweek()">
+                                <button class="col-2 col-md-1 btn btn-outline-primary" id="prevweek" onclick="prevweek()">
                                     <i class="fa fa-angle-left"></i>
                                 </button>
                                 <button class="border border-primary col-4 d-none d-md-block text-primary">
                                     <b><?= singkat_tanggal(date('d M Y', strtotime($week[0]))) ?></b>
                                     sd <b><?= singkat_tanggal(date('d M Y', strtotime($week[count($week) - 1]))) ?></b>
                                 </button>
-                                <button class="col-2 col-md-1 btn btn-outline-primary" id="nextweek"
-                                        onclick="nextweek()">
+                                <button class="col-2 col-md-1 btn btn-outline-primary" id="nextweek" onclick="nextweek()">
                                     <i class="fa fa-angle-right"></i>
                                 </button>
                             </div>
@@ -249,14 +247,13 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                                     $jamMulai->setDate($y, $m, $d);
                                     $jamSampai->setDate($y, $m, $d);
 
-                                    for ($i = 0; $i < $jadwal_kbm->kbm_jml_mapel_hari; $i++):
+                                    for ($i = 0; $i < $jadwal_kbm->kbm_jml_mapel_hari; $i++) :
                                         $jamke = $i + 1; ?>
                                         <tr>
                                             <td class="text-center align-middle text-bold tanggal">
                                                 <?= buat_tanggal(date('D, d M Y', strtotime($jh))) ?>
                                             </td>
-                                            <td class="border text-center align-middle jam-ke"
-                                                data-tgl="<?= $jh ?>"><?= $jamke ?></td>
+                                            <td class="border text-center align-middle jam-ke" data-tgl="<?= $jh ?>"><?= $jamke ?></td>
                                             <?php if (in_array($jamke, $arrIst)) :
                                                 $jamSampai->add(new DateInterval('PT' . $arrDur[$jamke] . 'M')); ?>
                                                 <td class="border text-center align-middle waktu">
@@ -265,17 +262,18 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                                                 <td class="border align-middle mapel" data-id="">ISTIRAHAT</td>
                                                 <td class="border text-center align-middle materi">ISTIRAHAT</td>
                                                 <td class="border text-center align-middle tugas">ISTIRAHAT</td>
-                                                <?php
+                                            <?php
                                                 $jamMulai->add(new DateInterval('PT' . $arrDur[$jamke] . 'M'));
-                                            else:
+                                            else :
                                                 $jamSampai->add(new DateInterval('PT' . $jadwal_kbm->kbm_jam_pel . 'M')); ?>
                                                 <td class="align-middle text-center">
                                                     <?= $jamMulai->format('H:i') ?> - <?= $jamSampai->format('H:i') ?>
                                                 </td>
-                                                <td title="<?= $arrRes[$idHari][$jamke]['nama_mapel'] ?>"
-                                                    class="border align-middle mapel"
-                                                    data-id="<?= $arrRes[$idHari][$jamke]['id_mapel'] ?>">
-                                                    <?= $arrRes[$idHari][$jamke]['kode'] ?>
+                                                <td title="<?= $arrRes[$idHari][$jamke]['nama_mapel'] ?>" class="border align-middle mapel" data-id="<?= $arrRes[$idHari][$jamke]['id_mapel'] ?>">
+                                                    <a href="/video/index/<?= $arrRes[$idHari][$jamke]['kode'] ?>">
+                                                        <?= $arrRes[$idHari][$jamke]['kode'] ?>
+                                                    </a>
+
                                                 </td>
                                                 <td class="border materi">
                                                     <?php
@@ -299,7 +297,7 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                                                         'select-materi',
                                                         $opsis,
                                                         isset($detail_jadwal_materi[$tempId]) ? $detail_jadwal_materi[$tempId]->id_materi : '',
-                                                        'class="select2 dropdown-materi form-control" data-name="select-materi"'//. $disableSelect
+                                                        'class="select2 dropdown-materi form-control" data-name="select-materi"' //. $disableSelect
                                                     ); ?>
                                                 </td>
                                                 <td class="border tugas">
@@ -324,19 +322,21 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                                                         'select-tugas',
                                                         $opsis,
                                                         isset($detail_jadwal_tugas[$tempId]) ? $detail_jadwal_tugas[$tempId]->id_materi : '',
-                                                        'class="select2 dropdown-tugas form-control" data-name="select-tugas"'//. $disableSelect
+                                                        'class="select2 dropdown-tugas form-control" data-name="select-tugas"' //. $disableSelect
                                                     ); ?>
                                                 </td>
-                                                <?php
+                                            <?php
                                                 $jamMulai->add(new DateInterval('PT' . $jadwal_kbm->kbm_jam_pel . 'M'));
                                             endif; ?>
                                         </tr>
                                         <?php if ($jamke == $jadwal_kbm->kbm_jml_mapel_hari) : ?>
-                                        <tr class="alert alert-default-secondary">
-                                            <td colspan="6"></td>
-                                        </tr>
-                                    <?php endif; endfor;
-                                    $idHari++; endforeach; ?>
+                                            <tr class="alert alert-default-secondary">
+                                                <td colspan="6"></td>
+                                            </tr>
+                                <?php endif;
+                                    endfor;
+                                    $idHari++;
+                                endforeach; ?>
                             </table>
 
                             <?= form_open('setMapel', array('id' => 'setmapel')); ?>
@@ -344,7 +344,7 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                             <?= form_close() ?>
 
                         <?php endif; ?>
-                    <?php else: ?>
+                    <?php else : ?>
                         <div class="col-lg-12 p-0">
                             <div class="alert alert-default-info shadow align-content-center" role="alert">
                                 Silakan Pilih Kelas.
@@ -360,8 +360,7 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
     </section>
 </div>
 
-<div class="modal fade" id="pickerModal" tabindex="-1" role="dialog" aria-labelledby="pickerModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="pickerModal" tabindex="-1" role="dialog" aria-labelledby="pickerModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -375,14 +374,14 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                     <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview">
                         <?php
                         $n = 1;
-                        foreach ($siswas as $siswa): ?>
+                        foreach ($siswas as $siswa) : ?>
                             <li class="nav-item">
-                                <a href="javascript:void(0)" class="nav-link pt-1 pb-1 pl-2 text-sm siswa"
-                                   onclick="preview(<?= $siswa->id_siswa ?>)">
+                                <a href="javascript:void(0)" class="nav-link pt-1 pb-1 pl-2 text-sm siswa" onclick="preview(<?= $siswa->id_siswa ?>)">
                                     <?= $n . '. ' . $siswa->nama ?>
                                 </a>
                             </li>
-                            <?php $n++; endforeach; ?>
+                        <?php $n++;
+                        endforeach; ?>
                     </ul>
                 </div>
             </div>
@@ -395,17 +394,17 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
 
 <script src="<?= base_url() ?>/assets/app/js/jquery.rowspanizer.js"></script>
 <script>
-    var tglSelected = "<?=$date_selected?>";
-    var klsSelected = "<?=$id_kelas?>";
-    var thnSelected = "<?=$thn_selected?>";
-    var blnSelected = "<?=$bln_selected?>";
-    var currSmt = "<?=$smt_active->id_smt?>";
-    var currTp = "<?=$tp_active->id_tp?>";
-    var currTahun = "<?=$tp_active->tahun?>".split('/');
+    var tglSelected = "<?= $date_selected ?>";
+    var klsSelected = "<?= $id_kelas ?>";
+    var thnSelected = "<?= $thn_selected ?>";
+    var blnSelected = "<?= $bln_selected ?>";
+    var currSmt = "<?= $smt_active->id_smt ?>";
+    var currTp = "<?= $tp_active->id_tp ?>";
+    var currTahun = "<?= $tp_active->tahun ?>".split('/');
 
-    var arrIstirahat = JSON.parse(JSON.stringify(<?= json_encode($jmlIst)?>));
+    var arrIstirahat = JSON.parse(JSON.stringify(<?= json_encode($jmlIst) ?>));
     var ists = [];
-    $.each(arrIstirahat, function (i, v) {
+    $.each(arrIstirahat, function(i, v) {
         ists.push(v.ist)
     });
 
@@ -447,9 +446,11 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
         if (datestring != null) window.location.href = base_url + 'kelasmaterijadwal/kelas?kelas=' + klsSelected + '&date=' + datestring + '&tahun=' + thnSelected + '&bulan=' + blnSelected;
     }
 
-    $(document).ready(function () {
-        $("#tbl-jadwal").rowspanizer({columns: [0]});
-        $('#year').on('change', function () {
+    $(document).ready(function() {
+        $("#tbl-jadwal").rowspanizer({
+            columns: [0]
+        });
+        $('#year').on('change', function() {
             var tahun = $(this).val().split('/');
             var thn;
             if (currSmt == '1') thn = tahun[0];
@@ -462,7 +463,7 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
             //reload(klsSelected, tgl, thnSelected, blnSelected);
         });
 
-        $('#month').on('change', function () {
+        $('#month').on('change', function() {
             var tahun = $('#year').val().split('/');
             var thn;
             if (currSmt == '1') thn = tahun[0];
@@ -478,11 +479,12 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
         if (calculatePrevWeek(tglSelected) == null) $('#prevweek').attr('disabled', 'disabled');
         if (calculateNextWeek(tglSelected) == null) $('#nextweek').attr('disabled', 'disabled');
 
-        $('#setmapel').submit('click', function (e) {
+        $('#setmapel').submit('click', function(e) {
             e.preventDefault();
             e.stopImmediatePropagation();
 
-            const $rows = $('#tbl-jadwal').find('tr'), headers = $rows.splice(0, 1); // header rows
+            const $rows = $('#tbl-jadwal').find('tr'),
+                headers = $rows.splice(0, 1); // header rows
             var jsonMateri = [];
             var jsonTugas = [];
             $rows.each((i, row) => {
@@ -502,28 +504,28 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
 
                 let itemm = {};
                 if (!isDisabled && $mapel != "" && $jamke != "" && !isIst) {
-                    itemm ["id_kjm"] = klsSelected + currTp + currSmt + $tanggal.replaceAll("-", "") + $jamke + "1";
-                    itemm ["jadwal_materi"] = $tanggal;
-                    itemm ["id_materi"] = idMateri;
-                    itemm ["id_kelas"] = klsSelected;
+                    itemm["id_kjm"] = klsSelected + currTp + currSmt + $tanggal.replaceAll("-", "") + $jamke + "1";
+                    itemm["jadwal_materi"] = $tanggal;
+                    itemm["id_materi"] = idMateri;
+                    itemm["id_kelas"] = klsSelected;
                     //itemm ["jam_ke"] = $jamke;
-                    itemm ["id_mapel"] = $mapel;
-                    itemm ["id_tp"] = currTp;
-                    itemm ["id_smt"] = currSmt;
+                    itemm["id_mapel"] = $mapel;
+                    itemm["id_tp"] = currTp;
+                    itemm["id_smt"] = currSmt;
 
                     jsonMateri.push(itemm);
                 }
 
                 let itemt = {};
                 if (!isDisabled && $mapel != "" && $jamke != "" && !isIst) {
-                    itemt ["id_kjm"] = klsSelected + currTp + currSmt + $tanggal.replaceAll("-", "") + $jamke + "2";
-                    itemt ["jadwal_materi"] = $tanggal;
-                    itemt ["id_materi"] = idTugas;
-                    itemt ["id_kelas"] = klsSelected;
+                    itemt["id_kjm"] = klsSelected + currTp + currSmt + $tanggal.replaceAll("-", "") + $jamke + "2";
+                    itemt["jadwal_materi"] = $tanggal;
+                    itemt["id_materi"] = idTugas;
+                    itemt["id_kelas"] = klsSelected;
                     //itemt ["jam_ke"] = $jamke;
-                    itemt ["id_mapel"] = $mapel;
-                    itemt ["id_tp"] = currTp;
-                    itemt ["id_smt"] = currSmt;
+                    itemt["id_mapel"] = $mapel;
+                    itemt["id_tp"] = currTp;
+                    itemt["id_smt"] = currSmt;
 
                     jsonTugas.push(itemt);
                 }
@@ -542,7 +544,7 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                 type: "POST",
                 dataType: "JSON",
                 data: $(this).serialize() + "&materi=" + JSON.stringify(jsonMateri) + "&tugas=" + JSON.stringify(jsonTugas),
-                success: function (data) {
+                success: function(data) {
                     console.log(data);
                     if (data) {
                         swal.fire({
@@ -561,7 +563,8 @@ $tempIdSelected = $id_kelas . $tp_active->id_tp . $smt_active->id_smt;
                             showCancelButton: false,
                         });
                     }
-                }, error: function (xhr, status, error) {
+                },
+                error: function(xhr, status, error) {
                     console.log("error", xhr.responseText);
                     swal.fire({
                         title: "ERROR",
