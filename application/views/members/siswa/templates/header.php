@@ -6,6 +6,7 @@
     <!-- Meta Tag -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://157.230.192.68:8000;">
     <title><?= $judul ?></title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <?php $logo_app = $setting->logo_kiri == null ? base_url() . 'assets/img/favicon.png' : base_url() . $setting->logo_kiri; ?>
@@ -14,8 +15,7 @@
     <!-- Required CSS -->
     <!-- v3 -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet"
-          href="<?= base_url() ?>/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/fontawesome-free/css/fontawesome.min.css">
@@ -23,8 +23,7 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/Ionicons/css/ionicons.min.css">
     <!-- pace-progress -->
-    <link rel="stylesheet"
-          href="<?= base_url() ?>/assets/plugins/pace-progress/themes/silver/pace-theme-center-circle.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/pace-progress/themes/silver/pace-theme-center-circle.css">
     <!-- Select2 -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
@@ -90,7 +89,7 @@
 </head>
 
 <script type="text/javascript">
-    let base_url = '<?=base_url()?>';
+    let base_url = '<?= base_url() ?>';
 </script>
 
 <?php
@@ -153,31 +152,30 @@ $display_logout = $this->uri->segment(2) == "penilaian" ? 'd-none' : '';
 ?>
 
 <body class="layout-top-nav layout-navbar-fixed">
-<div class="wrapper">
-    <nav class="main-header navbar navbar-expand-md navbar-dark navbar-green border-bottom-0">
-        <ul class="navbar-nav ml-2 <?= $dnone ?>">
-            <li class="nav-item">
-                <a href="<?= base_url('dashboard') ?>" type="button" class="btn btn-success">
-                    <i class="fas fa-arrow-left mr-2"></i><span class="d-none d-sm-inline-block ml-1">Beranda</span>
-                </a>
-            </li>
-        </ul>
-        <div class="mx-auto text-white text-center" style="line-height: 1">
-            <span class="text-lg p-0"><?= $setting->nama_aplikasi ?></span>
-            <br>
-            <small>Tahun Pelajaran: <?= $tp_active->tahun ?> Smt:<?= $smt_active->smt ?></small>
-        </div>
-        <ul class="navbar-nav <?= $display_clock ?>">
-            <li class="nav-item">
-                <div id="live-clock" class="text-right text-white"></div>
-            </li>
-        </ul>
-        <ul class="navbar-nav <?= $display_logout ?>">
-            <li class="nav-item">
-                <button onclick="logout()" class="btn btn-danger btn-outline-light">
-                    <span class="d-none d-sm-inline-block mr-2">Logout</span><i class="fas fa-sign-out-alt"></i>
-                </button>
-            </li>
-        </ul>
-    </nav>
-
+    <div class="wrapper">
+        <nav class="main-header navbar navbar-expand-md navbar-dark navbar-green border-bottom-0">
+            <ul class="navbar-nav ml-2 <?= $dnone ?>">
+                <li class="nav-item">
+                    <a href="<?= base_url('dashboard') ?>" type="button" class="btn btn-success">
+                        <i class="fas fa-arrow-left mr-2"></i><span class="d-none d-sm-inline-block ml-1">Beranda</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="mx-auto text-white text-center" style="line-height: 1">
+                <span class="text-lg p-0"><?= $setting->nama_aplikasi ?></span>
+                <br>
+                <small>Tahun Pelajaran: <?= $tp_active->tahun ?> Smt:<?= $smt_active->smt ?></small>
+            </div>
+            <ul class="navbar-nav <?= $display_clock ?>">
+                <li class="nav-item">
+                    <div id="live-clock" class="text-right text-white"></div>
+                </li>
+            </ul>
+            <ul class="navbar-nav <?= $display_logout ?>">
+                <li class="nav-item">
+                    <button onclick="logout()" class="btn btn-danger btn-outline-light">
+                        <span class="d-none d-sm-inline-block mr-2">Logout</span><i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>

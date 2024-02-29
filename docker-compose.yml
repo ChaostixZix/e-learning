@@ -8,6 +8,8 @@ services:
       - "80:80"
     volumes:
       - .:/var/www/html
+      - /etc/letsencrypt/live/bintangputra.my.id/fullchain.pem:/etc/ssl/certs/fullchain.pem
+      - /etc/letsencrypt/live/bintangputra.my.id/privkey.pem:/etc/ssl/private/privkey.pem
     depends_on:
       - db
     environment:

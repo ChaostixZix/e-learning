@@ -6,8 +6,9 @@
     <!-- Meta Tag -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://157.230.192.68:8000;">
     <title><?= $judul ?></title>
-    <meta name="renderer" content="webkit"/>
+    <meta name="renderer" content="webkit" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
     <?php $logo_app = $setting->logo_kiri == null ? base_url() . 'assets/img/favicon.png' : base_url() . $setting->logo_kiri; ?>
     <link rel="shortcut icon" href="<?= $logo_app ?>" type="image/x-icon">
@@ -15,8 +16,7 @@
     <!-- Required CSS -->
     <!-- v3 -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet"
-          href="<?= base_url() ?>/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/fontawesome-free/css/fontawesome.min.css">
@@ -24,15 +24,13 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/Ionicons/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet"
-          href="<?= base_url() ?>/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/jqvmap/jqvmap.min.css">
     <!-- pace-progress -->
-    <link rel="stylesheet"
-          href="<?= base_url() ?>/assets/plugins/pace-progress/themes/silver/pace-theme-center-circle.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/pace-progress/themes/silver/pace-theme-center-circle.css">
     <!-- Select2 -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
@@ -43,8 +41,7 @@
     <!-- Datetime picker -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/jquery-datetimepicker/jquery.datetimepicker.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet"
-          href="<?= base_url() ?>/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck for checkboxes and radio inputs -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/plugins/select2/css/select2.min.css">
@@ -127,7 +124,7 @@
 
 <script>
     let reloadCOunt = 0;
-    let base_url = '<?=base_url()?>';
+    let base_url = '<?= base_url() ?>';
 
     let globalToken;
     var adaJadwalUjian;
@@ -136,20 +133,20 @@
         $.ajax({
             url: base_url + "dashboard/checktokenjadwal",
             type: "GET",
-            success: function (response) {
+            success: function(response) {
                 console.log('getToken', response.token);
                 globalToken = response.token;
                 adaJadwalUjian = response.ada_jadwal;
                 if (reloadCOunt > 0) {
                     showSuccessToast('Token: <b>' + globalToken.token + '</b>');
                 }
-                reloadCOunt ++;
+                reloadCOunt++;
 
                 if (func && (typeof func == "function")) {
                     func(response);
                 }
             },
-            error: function (xhr, status, error) {
+            error: function(xhr, status, error) {
                 console.log(xhr);
             }
         });
@@ -173,8 +170,7 @@
     function checkTime(i) {
         if (i < 10) {
             i = "0" + i
-        }
-        ;  // add zero in front of numbers < 10
+        }; // add zero in front of numbers < 10
         return i;
     }
 
@@ -206,7 +202,8 @@
     }
 
     var bulans = ['Januari', 'Februari', 'Maret', 'April',
-        'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+    ];
     var arrhari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum\'at', 'Sabtu'];
 
     function stringToDate(dateStr) {
@@ -284,11 +281,11 @@ function singkat_tanggal($str)
 ?>
 
 <body class="hold-transition sidebar-mini text-sm" spellcheck="false" onload="startTime()">
-<div class="wrapper">
+    <div class="wrapper">
 
-    <!-- Navbar -->
-    <?php require_once("navbar.php"); ?>
+        <!-- Navbar -->
+        <?php require_once("navbar.php"); ?>
 
-    <!-- Sidebar -->
-    <?php require_once("sidebar.php"); ?>
-    <!-- /.sidebar -->
+        <!-- Sidebar -->
+        <?php require_once("sidebar.php"); ?>
+        <!-- /.sidebar -->
